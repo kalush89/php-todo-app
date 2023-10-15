@@ -5,6 +5,8 @@ include("./add_todo.php");
 include("./edit_todo.php");
 include("./update_todo.php");
 include("./delete-todo.php");
+
+// action messages
 $createTodo = createTodo();
 $editTodo = editTodo();
 
@@ -22,6 +24,7 @@ if(isset($_GET['delete'])) {
          echo $createTodo['success']??'';
          echo $createTodo['titleMsg']??''; 
          echo $createTodo['detailsMsg']??''; 
+         echo $removeTodo['success']??'';
          ?>
     </p>
  
