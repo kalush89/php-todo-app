@@ -7,10 +7,6 @@ $createTodo = createTodo();
 <form method="post">    
     <p class="text-danger">
         <?php 
-        // foreach ($createTodo as $todo) {
-        // echo $todo;
-        // }
-        // var_dump($createTodo)??'';
          echo $createTodo['success']??'';
          echo $createTodo['titleMsg']??''; 
          echo $createTodo['detailsMsg']??''; 
