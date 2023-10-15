@@ -9,25 +9,14 @@ function createTodo()
   if (isset($_POST['add'])) {
       /* validation */
     $title = $_POST['title'];
+    $details = $_POST['details'];
     $data['titleMsg'] = '';
+    $data['detailsMsg'] = '';
     if(empty($title)) {
         $data['titleMsg'] = "Empty Todo Title Field!";
-    }
-
-    $details = $_POST['details'];
-    $data['detailsMsg'] = '';
-    if(empty($details)) {
-        $data['detailsMsg'] = "Empty Todo Details Field!";
-    }
-
-     $validation = false;
-     echo $details;
-     echo $title;
-    if(empty($data['detailsMsg']) || empty($data['titleMsg'])) {
-       $validation = true;
-    }
-
-    if ($validation) {
+    }elseif(empty($details)) {
+      $data['detailsMsg'] = "Empty Todo Details Field!";
+    }else{
 
       /* insert query*/
       $query  = "INSERT INTO todos";
@@ -46,4 +35,3 @@ function createTodo()
    }
  
 }
-?>

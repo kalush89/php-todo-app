@@ -2,13 +2,18 @@
 include_once('./db_functions.php');
 include_once("./db_initialise.php");
 include("./add_todo.php");
-$createTask = createTodo();
+$createTodo = createTodo();
 ?>
 <form method="post">    
     <p class="text-danger">
         <?php 
-         echo $createTask['success']??'';
-         //echo $createTask['taskMsg']??''; 
+        // foreach ($createTodo as $todo) {
+        // echo $todo;
+        // }
+        // var_dump($createTodo)??'';
+         echo $createTodo['success']??'';
+         echo $createTodo['titleMsg']??''; 
+         echo $createTodo['detailsMsg']??''; 
          ?>
     </p>
  
