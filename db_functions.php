@@ -66,6 +66,19 @@ function update_todo($sql, $conn){
   $conn->close();
 }
 
+// sql update item
+function delete_todo($sql, $conn){
+  $result = $conn->query($sql);
+  if ($result === FALSE) {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+    return $result;
+  } else {
+    echo "Record deleted successfully";
+    return $result;
+  }
+  $conn->close();
+}
+
 
 
 

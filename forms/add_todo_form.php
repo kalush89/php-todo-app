@@ -4,12 +4,17 @@ include_once("./db_initialise.php");
 include("./add_todo.php");
 include("./edit_todo.php");
 include("./update_todo.php");
+include("./delete-todo.php");
 $createTodo = createTodo();
 $editTodo = editTodo();
 
 if(isset($_GET['edit'])) {
-    $createTodo = updateTodoById();
+    $createTodo = updateTodoById();  
 }
+if(isset($_GET['delete'])) {
+    $removeTodo =  deleteTodoById();
+}
+
 ?>
 <form method="post">    
     <p class="text-danger">
