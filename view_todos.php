@@ -20,14 +20,13 @@ foreach($getTodos['data'] as $todo) {
         ?>
     </div>
     <div class="col-sm-1">
-        <a href="index.php?edit-task=<?php echo $todo['id']; ?>" class="text-success text-decoration-none">
-        <i class='fas fa-edit'></i>
+        <a href="index.php?edit=<?php echo $todo['id']; ?>" class="text-success text-decoration-none">
+        edit
        </a>
     </div>
     <div class="col-sm-1">
-    <a href="index.php?delete-task=<?php echo $todo['id']; ?>" class="text-danger text-decoration-none">
-    <i class='fas fa-trash-alt'></i>
-
+    <a href="index.php?delete=<?php echo $todo['id']; ?>" class="text-danger text-decoration-none">
+    delete
     </a>
     </div>
 </div>
