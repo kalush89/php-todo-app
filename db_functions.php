@@ -1,41 +1,43 @@
 <?php 
-include_once("connection.php");
-
+include_once("db_connection.php");
+global $conn;
 //Create database
-$sql = "CREATE DATABASE TodoApp";
-    if ($conn->query($sql) === TRUE) {
-    echo "Database created successfully";
+function create_db( $sql, $conn ){
+    $result = $conn->query($sql);
+    if ($result === FALSE) {
+      echo "Error creating database: " . $conn->error;
+      return $result;
     } else {
-    echo "Error creating database: " . $conn->error;
+      echo "Database created successfully";
+      return $result;
     }
     $conn->close();
-
-// sql to create table
-function create_table($tablename, $columns, $conn){
-    $sql = "CREATE TABLE $tablename (
-        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        $columns[0] VARCHAR(30) NOT NULL,
-        $columns[1] VARCHAR(30) NOT NULL,
-        $columns[2] TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-        )";
-        
-        if ($conn->query($sql) === TRUE) {
-          echo "Table created successfully";
-        } else {
-          echo "Error creating table: " . $conn->error;
-        }
-        $conn->close();
 }
 
-function add_item($columns, $items, $conn){
-    $sql = "INSERT INTO Todos ($columns[0], $columns[1], $columns[2]) VALUES ($items[0], $items[1], $items[2])";
+// sql to create table
+function create_table($sql, $conn){
+    $result = $conn->query($sql);
+    if ($result === FALSE) {
+      echo "Error creating table: " . $conn->error;
+      return $result;
+    } else {
+      echo "Table created successfully";
+      return $result;
+    }
+    $conn->close();
+}
 
-        if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
-        } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-        }
-        $conn->close();
+// sql add item
+function add_item($sql, $conn){
+    $result = $conn->query($sql);
+    if ($result === FALSE) {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+      return $result;
+    } else {
+      echo "New record created successfully";
+      return $result;
+    }
+    $conn->close();
 }
 
 
