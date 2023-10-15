@@ -1,5 +1,5 @@
 <?php
-include_once("db_functions.php");
+
 /* Fetch data */
 function getTodos()
 {
@@ -9,7 +9,7 @@ function getTodos()
   $query  = "SELECT *";
   $query .= "FROM todos ORDER BY id DESC"; 
 
-  $result = get_all($query, $conn);
+  $result = query_db($query, $conn);
     
   if ($result) {
 

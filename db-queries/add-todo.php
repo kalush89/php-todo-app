@@ -1,6 +1,4 @@
 <?php
-include_once("db_functions.php");
-
 
 function createTodo()
 {
@@ -23,7 +21,7 @@ function createTodo()
       $query .= "(title, details) ";
       $query .= "VALUES ('$title', '$details')";
 
-      $result = add_item($query, $conn);
+      $result = query_db($query, $conn);
 
       if ($result) {
         $data['success'] = "Todo is added successfully";

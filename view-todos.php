@@ -1,5 +1,5 @@
 <?php
-include('get_all_todos.php');
+include('./db-queries/get-all-todos.php');
 $getTodos = getTodos(); 
 ?>
 

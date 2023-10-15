@@ -1,5 +1,4 @@
 <?php
-include_once("db_functions.php");
 function deleteTodoById()
 {
   global $conn; 
@@ -10,7 +9,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
      /* sql query*/
     $query  = "DELETE FROM todos WHERE id =$id";
 
-    $result = delete_todo($query, $conn);
+    $result = query_db($query, $conn);
 
     if ($result) {
         $data['success'] = "Todo deleted successfully";

@@ -2,8 +2,8 @@
 include('header.html');
 ?>
 <?php  
-include('./forms/add_todo_form.php');
-include('./view_todos.php');
+include('./forms/add-todo-form.php');
+include('./view-todos.php');
 ?>
 
 <?php

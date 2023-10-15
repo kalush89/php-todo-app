@@ -1,10 +1,10 @@
 <?php  
-include_once('./db_functions.php');
-include_once("./db_initialise.php");
-include("./add_todo.php");
-include("./edit_todo.php");
-include("./update_todo.php");
-include("./delete-todo.php");
+include_once('./db-connection.php');
+include_once("./db-initialise.php");
+include("./db-queries/add-todo.php");
+include("./db-queries/to-edit-todo.php");
+include("./db-queries/update-todo.php");
+include("./db-queries/delete-todo.php");
 
 // action messages
 $createTodo = createTodo();

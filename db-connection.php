@@ -12,5 +12,15 @@
     die("Connection failed: " . $conn->connect_error);
     }
    
+    //query the database
+    function query_db( $sql, $conn ){
+        $result = $conn->query($sql);
+        if ($result === FALSE) {
+          return $result;
+        } else {
+          return $result;
+        }
+        $conn->close();
+    }
 
 ?>

@@ -24,7 +24,7 @@ if (isset($_POST['update']) && isset($_GET['edit']) && !empty($_GET['edit'])) {
     $query .= "title ='$title', details ='$details' ";
     $query .= "WHERE id =$id";
 
-    $result = update_todo($query, $conn);
+    $result = query_db($query, $conn);
 
     if($result) {
 
